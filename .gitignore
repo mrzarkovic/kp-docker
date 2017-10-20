@@ -4,3 +4,4 @@ db_data/*
 code/*
 
 !apache-php/config/*.example
+!db_data/.gitkeep
