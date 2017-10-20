@@ -5,3 +5,4 @@ code/*
 
 !apache-php/config/*.example
 !db_data/.gitkeep
+!code/.gitkeep
