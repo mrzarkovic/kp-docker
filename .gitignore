@@ -1,7 +1,6 @@
 .idea
-apache-php/conf/*
+apache-php/config/*
 db_data/*
 code/*
 
-!apache-php/conf/*.example
-.cache/
+!apache-php/config/*.example
