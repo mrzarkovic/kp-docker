@@ -1,0 +1,18 @@
+FROM ubuntu:14.04
+
+RUN apt-get update \
+	&& apt-get install -y \
+	   libmemcached-dev \
+	   libfreetype6-dev \
+       libjpeg62-turbo-dev \
+       libmcrypt-dev \
+       libpng12-dev \
+    && pecl install memcached-2.2.0 \
+	&& a2enmod expires rewrite \
+	&& a2enmod ssl \
+	&& a2enmod headers \
+	&& a2enmod mime \
+	&& docker-php-source delete
+
+#COPY config/001-kp.conf /etc/apache2/sites-enabled/000-default.conf
+#RUN chmod 755 /var/www/html/

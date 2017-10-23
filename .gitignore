@@ -2,6 +2,7 @@
 apache-php/config/*
 db_data/*
 code/*
+nohup.out
 
 !apache-php/config/*.example
 !db_data/.gitkeep
