@@ -12,20 +12,6 @@ To remember git credentials, before `git push` run:
 
 `$ git config credential.helper store`
 
-To checkout a branch:
 
-`$ git checkout feature-mobile-web`
-
-To pull changes from origin:
-
-`$ git pull origin feature-mobile-web`
-
-To push to current branch:
-
-`$ git push origin HEAD`
-
-or specific branch:
-
-`$ git push origin feature-mobile-web`
-
-
+## Clean Docker
+https://gist.github.com/bastman/5b57ddb3c11942094f8d0a97d461b430

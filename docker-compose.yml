@@ -9,9 +9,9 @@ services:
       - ./code:/var/www/html/
       - ./apache-php/config/001-kp.conf:/etc/apache2/sites-enabled/001-kp.conf
       - ./apache-php/config/php.ini:/usr/local/etc/php/php.ini
-    networks:
-      static-network:
-        ipv4_address: 172.20.128.1
+#    networks:
+#      static-network:
+#        ipv4_address: 172.20.128.1
 
   db:
     build: ./mysql
@@ -22,13 +22,13 @@ services:
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=root
-    networks:
-      static-network:
-        ipv4_address: 172.20.128.2
+#    networks:
+#      static-network:
+#        ipv4_address: 172.20.128.2
 
-networks:
-  static-network:
-    ipam:
-      config:
-        - subnet: 172.20.0.0/16
-          ip_range: 172.28.5.0/24
+#networks:
+#  static-network:
+#    ipam:
+#      config:
+#        - subnet: 172.20.0.0/16
+#          ip_range: 172.28.5.0/24
