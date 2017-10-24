@@ -7,8 +7,9 @@ services:
       - 80:80
     volumes:
       - ./code:/var/www/html/
-      - ./apache-php/config/001-kp.conf:/etc/apache2/sites-enabled/001-kp.conf
-      - ./apache-php/config/php.ini:/usr/local/etc/php/php.ini
+    environment:
+      XDEBUG_CONFIG: "remote_host=192.168.100.105"
+      PHP_IDE_CONFIG: "serverName=Docker-Apache-PHP"
 #    networks:
 #      static-network:
 #        ipv4_address: 172.20.128.1
