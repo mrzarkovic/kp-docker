@@ -6,7 +6,7 @@ COPY config/xdebug.ini /tmp/xdebug.ini
 RUN yes | pecl install xdebug \
     && echo "zend_extension="`find /usr/local/lib/php/extensions/ -iname 'xdebug.so'` > $XDEBUGINI_PATH \
     && cat /tmp/xdebug.ini >> $XDEBUGINI_PATH \
-    && echo "xdebug.remote_host="`/sbin/ip route|awk '/default/ { print $3 }'` >> $XDEBUGINI_PATH
+    && echo "\nxdebug.remote_host="`/sbin/ip route|awk '/default/ { print $3 }'` >> $XDEBUGINI_PATH
 
 # COPY APACHE AND PHP CONFIG
 COPY config/001-kp.conf /etc/apache2/sites-enabled/001-kp.conf
@@ -23,7 +23,7 @@ RUN docker-php-source extract \
     && pecl install memcached-2.2.0 \
     && docker-php-ext-enable memcached \
 	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-	&& docker-php-ext-install pdo pdo_mysql mysql mysqli \
+	&& docker-php-ext-install pdo pdo_mysql mysql mysqli exif sockets \
 	&& docker-php-ext-install -j$(nproc) mcrypt \
 	&& docker-php-ext-install -j$(nproc) gd \
 	&& a2enmod expires rewrite \

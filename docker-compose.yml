@@ -5,6 +5,9 @@ services:
     build: ./apache-php
     ports:
       - 80:80
+      - 8000:8000
+      - 8001:8001
+      - 8002:8002
     volumes:
       - ./code:/var/www/html/
     environment:
