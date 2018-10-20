@@ -1,4 +1,4 @@
-# KP Docker
+# Test Docker
 
 ## Configuration
 Make a copy of `*.example` files in `/apache-php/config/` directory and set up your environment
